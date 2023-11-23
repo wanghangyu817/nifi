@@ -117,19 +117,19 @@
         <okio.version>3.6.0</okio.version>
         <org.apache.commons.cli.version>1.6.0</org.apache.commons.cli.version>
         <org.apache.commons.codec.version>1.16.0</org.apache.commons.codec.version>
-        <org.apache.commons.compress.version>1.24.0</org.apache.commons.compress.version>
+        <org.apache.commons.compress.version>1.25.0</org.apache.commons.compress.version>
         <org.apache.commons.lang3.version>3.13.0</org.apache.commons.lang3.version>
         <org.apache.commons.net.version>3.10.0</org.apache.commons.net.version>
         <org.apache.commons.io.version>2.15.0</org.apache.commons.io.version>
         <org.apache.commons.text.version>1.11.0</org.apache.commons.text.version>
         <org.apache.httpcomponents.httpclient.version>4.5.14</org.apache.httpcomponents.httpclient.version>
         <org.apache.httpcomponents.httpcore.version>4.4.16</org.apache.httpcomponents.httpcore.version>
-        <org.bouncycastle.version>1.76</org.bouncycastle.version>
+        <org.bouncycastle.version>1.77</org.bouncycastle.version>
         <testcontainers.version>1.19.1</testcontainers.version>
         <org.slf4j.version>2.0.9</org.slf4j.version>
-        <derby.version>10.16.1.1</derby.version>
+        <derby.version>10.17.1.0</derby.version>
         <ranger.version>2.4.0</ranger.version>
-        <jetty.version>10.0.17</jetty.version>
+        <jetty.version>10.0.18</jetty.version>
         <jackson.bom.version>2.15.3</jackson.bom.version>
         <avro.version>1.11.3</avro.version>
         <jaxb.runtime.version>2.3.8</jaxb.runtime.version>
@@ -148,7 +148,7 @@
         <mockito.version>5.7.0</mockito.version>
         <netty.3.version>3.10.6.Final</netty.3.version>
         <snakeyaml.version>2.2</snakeyaml.version>
-        <netty.4.version>4.1.100.Final</netty.4.version>
+        <netty.4.version>4.1.101.Final</netty.4.version>
         <spring.version>5.3.30</spring.version>
         <spring.security.version>5.8.7</spring.security.version>
         <swagger.annotations.version>1.6.12</swagger.annotations.version>
@@ -665,6 +665,11 @@
                 <version>${okio.version}</version>
             </dependency>
             <dependency>
+                <groupId>com.squareup.okio</groupId>
+                <artifactId>okio-fakefilesystem</artifactId>
+                <version>${okio.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-bom</artifactId>
                 <version>${kotlin.version}</version>
@@ -701,7 +706,7 @@
             <dependency>
                 <groupId>org.jsoup</groupId>
                 <artifactId>jsoup</artifactId>
-                <version>1.16.1</version>
+                <version>1.16.2</version>
             </dependency>
             <dependency>
                 <groupId>com.github.ben-manes.caffeine</groupId>
@@ -723,6 +728,12 @@
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>4.13.2</version>
+            </dependency>
+            <!-- Override ASM for introspection of classes -->
+            <dependency>
+                <groupId>org.ow2.asm</groupId>
+                <artifactId>asm</artifactId>
+                <version>9.6</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -1281,7 +1292,7 @@
                     <plugin>
                         <groupId>org.owasp</groupId>
                         <artifactId>dependency-check-maven</artifactId>
-                        <version>8.4.2</version>
+                        <version>8.4.3</version>
                         <executions>
                             <execution>
                                 <inherited>false</inherited>
